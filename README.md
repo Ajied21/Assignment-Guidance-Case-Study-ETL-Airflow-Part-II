@@ -109,7 +109,7 @@ URL : https://randomuser.me/
 
 - Folder Data
 
-    - Save Data
+    - Save Data (proses save data dari extract menggunakan url atau scraping web sesuai format data yang diambil lalu di transform untuk di save ke format asli ya dan format parquet)
       <div style="text-align: center;">
           <img src="./images/Folder_data_&_plugins.png" alt="Architecture Overview" width="500"/>
       </div>
