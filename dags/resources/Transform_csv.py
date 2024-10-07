@@ -49,7 +49,7 @@ def get_csv(n):
     return data_csv
 
 def transfrom_to_csv(file_name, n):
-    folder_path = './data/csv'
+    folder_path = './dags/data/csv'
     os.makedirs(folder_path, exist_ok=True)
 
     # Ambil data CSV
@@ -59,6 +59,7 @@ def transfrom_to_csv(file_name, n):
     file_path = os.path.join(folder_path, f'{file_name}.csv')
     data_csv.to_csv(file_path, index=False)
     print(f"Data tersimpan ke {file_path}")
+    print(f"Data berhasil ke transform:\n{data_csv}")
 
 if __name__ == '__main__':
     

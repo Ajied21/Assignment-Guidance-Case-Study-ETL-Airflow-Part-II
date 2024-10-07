@@ -31,7 +31,7 @@ def get_json(n):
     return None
 
 def transfrom_to_json(file_name, n):
-    folder_path = './data/json'
+    folder_path = './dags/data/json'
     os.makedirs(folder_path, exist_ok=True)
 
     # Ambil data JSON
@@ -42,6 +42,7 @@ def transfrom_to_json(file_name, n):
     with open(file_path, 'w') as json_file:
         json.dump(data_json, json_file, indent=4)
     print(f"Data tersimpan ke {file_path}")
+    print(f"Data berhasil ke transform:\n{data_json}")
 
 if __name__ == '__main__':
     

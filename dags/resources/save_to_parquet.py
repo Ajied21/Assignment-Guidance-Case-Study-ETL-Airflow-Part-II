@@ -8,22 +8,24 @@ from .Transform_xml import get_xml
 def save_parquet_for_format(data_df, file_name):
     # Ubah tipe data kolom yang diperlukan
     data_df['kode_pos'] = data_df['kode_pos'].astype(str)
-    file_path = f'./data/parquet/{file_name}.parquet'
+    file_path = f'./dags/data/parquet/{file_name}.parquet'
     data_df.to_parquet(file_path, index=False)
     print(f"Data parquet tersimpan ke {file_path}")
 
 # Fungsi untuk menyimpan data ke format parquet sesuai format
 def transfrom_to_parquet(url, file_name, n):
-    folder_path = './data/parquet'
+    folder_path = './dags/data/parquet'
     os.makedirs(folder_path, exist_ok=True)
 
     if url == "json":
         data = get_json(n)
         df_json = pd.DataFrame(data)
         save_parquet_for_format(df_json, file_name)
+        print(f"Dataframe untuk di save ke parquet:\n{df_json}")
     elif url == "csv":
-        data = get_csv(n)
-        save_parquet_for_format(data, file_name)
+        df_csv = get_csv(n)
+        save_parquet_for_format(df_csv, file_name)
+        print(f"Dataframe untuk di save ke parquet:\n{df_csv}")
     elif url == "xml":
         data_xml = get_xml(n)
         # Konversi data XML ke list of dict dan kemudian ke DataFrame
@@ -34,6 +36,7 @@ def transfrom_to_parquet(url, file_name, n):
             user_data_list.append(user_data)
         df_xml = pd.DataFrame(user_data_list)
         save_parquet_for_format(df_xml, file_name)
+        print(f"Dataframe untuk di save ke parquet:\n{df_xml}")
 
 if __name__ == '__main__':
     

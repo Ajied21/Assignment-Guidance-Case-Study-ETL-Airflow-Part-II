@@ -46,7 +46,7 @@ def get_xml(n):
     return data_xml
 
 def transfrom_to_xml(file_name, n):
-    folder_path = './data/xml'
+    folder_path = './dags/data/xml'
     os.makedirs(folder_path, exist_ok=True)
 
     # Ambil data XML
@@ -57,6 +57,7 @@ def transfrom_to_xml(file_name, n):
     with open(file_path, 'w') as xml_file:
         xml_file.write(data_xml)
     print(f"Data tersimpan ke {file_path}")
+    print(f"Data berhasil ke transform:\n{data_xml}")
 
 if __name__ == '__main__':
     

@@ -34,11 +34,11 @@ def etl_branch_dag():
     @branch_task
     def extract_data(extension):
         # Menentukan jalur extract berdasarkan extension
-        if extension == "csv":
+        if extension == "csv" or extension == "CSV" or extension == "Csv":
             return "extract_from_csv"
-        elif extension == "json":
+        elif extension == "json" or extension == "JSON" or extension == "Json":
             return "extract_from_json"
-        elif extension == "xml":
+        elif extension == "xml" or extension == "XML" or extension == "Xml":
             return "extract_from_xml"
         else:
             raise ValueError("Kesalahan format data")
@@ -73,9 +73,9 @@ def etl_branch_dag():
         return transfrom_to_parquet(extension, table_name, row_count)
 
     @task
-    def load_data(table_name, extension, row_count):
+    def load_data():
         # Load data ke SQLite
-        return load_data_to_sqlite(table_name, extension, row_count)
+        return load_data_to_sqlite()
 
     # Mendefinisikan alur DAG
     start_task = EmptyOperator(task_id="start_task")
@@ -97,7 +97,7 @@ def etl_branch_dag():
     save_task_parquet = save_to_parquet('{{ params.Extension }}', '{{ params.Table_Name }}', '{{ params.Row_Count }}')
 
     # Load data setelah transformasi
-    load = load_data('{{ params.Table_Name }}', '{{ params.Extension }}', '{{ params.Row_Count }}')
+    load = load_data()
 
     # Alur DAG
     start_task >> extract_choice
