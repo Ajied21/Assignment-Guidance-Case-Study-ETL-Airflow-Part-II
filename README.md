@@ -1,4 +1,8 @@
-# Assignment Guidance: Case Study ETL Airflow
+# Assignment Guidance: Case Study ETL Airflow with Docker
+
+<div style="text-align: center;">
+    <img src="./images/Airflow_Docker.png" alt="Architecture Overview" width="500"/>
+</div>
 
 ## Deskripsi Proyek
 Proyek ini merupakan implementasi proses ETL (Extract, Transform, Load) menggunakan **Apache Airflow**. Proses ini bertujuan untuk mengambil data dari beberapa sumber (CSV, JSON, XML), melakukan transformasi, dan kemudian menyimpan data ke dalam format **Parquet** dan **SQLite**. Proyek ini menggabungkan tugas-tugas ETL dalam sebuah **DAG (Directed Acyclic Graph)** yang dapat dijalankan dan diatur melalui Airflow.
