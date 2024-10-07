@@ -24,7 +24,7 @@ def get_latest_parquet_file(folder_path):
 
 def load_data_from_latest_parquet():
     # Tentukan path folder untuk file parquet
-    folder_path = './dags/data/parquet'
+    folder_path = './data/parquet'
     
     # Dapatkan file parquet terbaru
     latest_file = get_latest_parquet_file(folder_path)
@@ -42,7 +42,7 @@ def load_data_from_latest_parquet():
 
 def load_data_to_sqlite():
     # Tentukan path untuk menyimpan SQLite database di folder 'plugins'
-    plugins_folder = './dags/engine_db'
+    plugins_folder = './plugins'
     os.makedirs(plugins_folder, exist_ok=True)  # Buat folder jika belum ada
     db_path = os.path.join(plugins_folder, 'database_airflow.db')
 

@@ -1,13 +1,16 @@
 import os
 import xml.etree.ElementTree as ET
-from .Extract_xml import extract_xml
+from .Extract_xml import extract_xml  # Mengimpor fungsi extract_xml dari modul Extract_xml
 
-# Fungsi untuk mengambil data XML
 def get_xml(n):
+    # Mengambil data XML dari fungsi extract_xml
     results = extract_xml(n)
-    root = ET.fromstring(results)
+    root = ET.fromstring(results)  # Parsing XML menjadi root element
 
+    # List untuk menampung data pengguna
     user_data_list = []
+
+    # Melakukan iterasi untuk mengambil setiap data pengguna dari XML
     for user in root.findall('.//results'):
         user_data = {
             "id_user": user.find('login/uuid').text if user.find('login/uuid') is not None else None,
@@ -29,36 +32,45 @@ def get_xml(n):
             "url_photo": user.find('picture/large').text if user.find('picture/large') is not None else None
         }
 
+        # Memastikan data pengguna ada, baru dimasukkan ke list
         if user_data["id_user"] is not None:
             user_data_list.append(user_data)
 
+    # Jika tidak ada data pengguna yang ditemukan, kembalikan string kosong dengan root "users"
     if not user_data_list:
         return '<users></users>'
 
+    # Membuat root elemen untuk hasil XML
     root_element = ET.Element("results")
+
+    # Memasukkan data pengguna ke dalam elemen XML
     for user_data in user_data_list:
         user_element = ET.SubElement(root_element, "user")
         for key, value in user_data.items():
-            ET.SubElement(user_element, key).text = str(value) if value is not None else ''
+            ET.SubElement(user_element, key).text = str(value) if value is not None else ''  # Menambahkan data ke elemen XML
 
+    # Mengubah data ke format XML
     data_xml = ET.tostring(root_element, encoding='unicode')
 
     return data_xml
 
-def transfrom_to_xml(file_name, n):
-    folder_path = './dags/data/xml'
-    os.makedirs(folder_path, exist_ok=True)
 
-    # Ambil data XML
+def transfrom_to_xml(file_name, n):
+    # Tentukan direktori penyimpanan file
+    folder_path = './data/xml'
+    os.makedirs(folder_path, exist_ok=True)  # Membuat folder jika belum ada
+
+    # Ambil data XML yang sudah diproses
     data_xml = get_xml(n)
 
-    # Simpan ke file XML
-    file_path = os.path.join(folder_path, f'{file_name}.xml')
+    # Simpan data XML ke dalam file
+    file_path = os.path.join(folder_path, f'{file_name}.xml')  # Tentukan path untuk file
     with open(file_path, 'w') as xml_file:
-        xml_file.write(data_xml)
-    print(f"Data tersimpan ke {file_path}")
-    print(f"Data berhasil ke transform:\n{data_xml}")
+        xml_file.write(data_xml)  # Tulis data ke file
+    print(f"Data tersimpan ke {file_path}")  # Informasi lokasi file XML tersimpan
+    print(f"Data berhasil ke transform:\n{data_xml}")  # Menampilkan data XML yang sudah diproses
+
 
 if __name__ == '__main__':
-    
+
     transfrom_to_xml()

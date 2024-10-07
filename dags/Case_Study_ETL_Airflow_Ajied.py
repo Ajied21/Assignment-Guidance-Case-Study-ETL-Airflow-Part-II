@@ -13,7 +13,7 @@ from resources.Load_data import load_data_to_sqlite
 
 # Fungsi DAG utama
 @dag(
-    description="Assignment Guidance: Case Study ETL Airflow",
+    description="Dhoifullah Luth Majied",
     default_args={
         "owner": "Ajied(WhatsApp), Ajied(Email), dibimbing",
     },
@@ -24,12 +24,15 @@ from resources.Load_data import load_data_to_sqlite
     },
     params={
         "Table_Name": Param("", type="string", description="silakan masukan nama tabel dan bila ingin di spasi tambahkan ( _ atau - )"),
-        "Extension": Param("", type="string", description="silakan sesuaikan format file pada url ya dan tulis huruf kecil semua, \
-        adapun format yang disarankan (csv, json, xml)"),
-        "Row_Count": Param(10, type="integer", description="Masukkan jumlah baris data yang ingin diambil (default: 100)"),
+        "Extension": Param("", type="string", description="silakan sesuaikan format file pada url ya dan tulis huruf kecil semua,\
+                                                            adapun format yang disarankan (csv, json, xml)"),
+        "Row_Count": Param(100, type="integer", description="Masukkan jumlah baris data yang ingin diambil dan bebas mau berapa aja,\
+                                                            contoh: 100"),
     }
 )
-def etl_branch_dag():
+
+
+def Assignment_ETL_For_Get_RandomUser():
 
     @branch_task
     def extract_data(extension):
@@ -111,4 +114,4 @@ def etl_branch_dag():
     [transform_csv, transform_json, transform_xml] >> save_task_parquet >> load >> end_task
 
 # Menjalankan DAG
-etl_branch_dag()
+Assignment_ETL_For_Get_RandomUser()
