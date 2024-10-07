@@ -7,7 +7,7 @@
 ## Deskripsi Proyek
 Proyek ini merupakan implementasi proses ETL (Extract, Transform, Load) menggunakan **Apache Airflow**. Proses ini bertujuan untuk mengambil data dari beberapa sumber (CSV, JSON, XML), melakukan transformasi, dan kemudian menyimpan data ke dalam format **Parquet** dan **SQLite**. Proyek ini menggabungkan tugas-tugas ETL dalam sebuah **DAG (Directed Acyclic Graph)** yang dapat dijalankan dan diatur melalui Airflow.
 
-## Deskripsi data sources
+## Deskripsi Data Sources
 randomuser.me adalah sebuah API yang menyediakan data pengguna acak untuk keperluan pengembangan, pengujian, dan demonstrasi. Dengan menggunakan API ini, Anda dapat dengan mudah menghasilkan informasi pengguna yang realistis, termasuk nama, alamat, nomor telepon, foto profil, dan data lainnya.
 
 Fitur Utama:
@@ -51,7 +51,7 @@ URL : https://randomuser.me/
     └── Load_data.py                 # Memuat data ke SQLite 
 └── README.md                        # Dokumentasi proyek ini
 
-  ## Struktur Data
+## Struktur Data
 
 - `id_user`          # Menyimpan ID pengguna
 - `nama_user`        # Menyimpan nama pengguna
