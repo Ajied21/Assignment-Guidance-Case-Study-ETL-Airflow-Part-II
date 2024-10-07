@@ -44,21 +44,21 @@ URL : https://randomuser.me/
 
 └── resources/
 
-    ├── Extract_csv.py               # Fungsi extract untuk file CSV 
+   ├── Extract_csv.py               # Fungsi extract untuk file CSV 
     
-    ├── Extract_json.py              # Fungsi extract untuk file JSON 
+   ├── Extract_json.py              # Fungsi extract untuk file JSON 
     
-    ├── Extract_xml.py               # Fungsi extract untuk file XML 
+   ├── Extract_xml.py               # Fungsi extract untuk file XML 
     
-    ├── Transform_csv.py             # Transformasi data CSV 
+   ├── Transform_csv.py             # Transformasi data CSV 
     
-    ├── Transform_json.py            # Transformasi data JSON 
+   ├── Transform_json.py            # Transformasi data JSON 
     
-    ├── Transform_xml.py             # Transformasi data XML 
+   ├── Transform_xml.py             # Transformasi data XML 
     
-    ├── save_to_parquet.py           # Menyimpan data ke format Parquet 
+   ├── save_to_parquet.py           # Menyimpan data ke format Parquet 
     
-    └── Load_data.py                 # Memuat data ke SQLite 
+   └── Load_data.py                 # Memuat data ke SQLite 
     
 └── README.md                        # Dokumentasi proyek ini
 
