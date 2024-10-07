@@ -39,16 +39,27 @@ URL : https://randomuser.me/
 ## Struktur Proyek
 .
 ├── dags/
+
 │   └── assignment_etl_airflow.py    # Script utama DAG 
+
 └── resources/
+
     ├── Extract_csv.py               # Fungsi extract untuk file CSV 
+    
     ├── Extract_json.py              # Fungsi extract untuk file JSON 
+    
     ├── Extract_xml.py               # Fungsi extract untuk file XML 
+    
     ├── Transform_csv.py             # Transformasi data CSV 
+    
     ├── Transform_json.py            # Transformasi data JSON 
+    
     ├── Transform_xml.py             # Transformasi data XML 
+    
     ├── save_to_parquet.py           # Menyimpan data ke format Parquet 
+    
     └── Load_data.py                 # Memuat data ke SQLite 
+    
 └── README.md                        # Dokumentasi proyek ini
 
 ## Struktur Data
