@@ -37,7 +37,7 @@ URL : https://randomuser.me/
 - **Parameterisasi**: Pengguna dapat menentukan tabel tujuan, format file, dan jumlah baris yang ingin diproses melalui parameter DAG.
 
 ## Struktur Proyek
-.
+
 ├── dags/
 
 │   └── assignment_etl_airflow.py    # Script utama DAG 
