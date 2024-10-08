@@ -27,7 +27,10 @@ randomuser.me sering digunakan oleh pengembang untuk:
 
 API ini sangat berguna bagi pengembang yang membutuhkan data dummy untuk aplikasi mereka tanpa harus membuat data secara manual.
 
-URL : https://randomuser.me/
+URL       : `https://randomuser.me/`
+URL_csv   : `https://randomuser.me/api/?format=csv&results=/`
+URL_json  : `https://randomuser.me/api/?format=json&results/`
+URL_xml   : `https://randomuser.me/api/?format=xml&results=/`
 
 ## Fitur Utama
 - **Extract**: Mengambil data dari file berformat CSV, JSON, atau XML.

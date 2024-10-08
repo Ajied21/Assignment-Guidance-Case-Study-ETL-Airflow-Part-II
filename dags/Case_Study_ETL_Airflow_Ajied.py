@@ -8,7 +8,7 @@ from resources.Extract_xml import extract_xml
 from resources.Transform_csv import transfrom_to_csv 
 from resources.Transform_json import transfrom_to_json
 from resources.Transform_xml import transfrom_to_xml
-from resources.save_to_parquet import transfrom_to_parquet
+from resources.Save_to_parquet import transfrom_to_parquet
 from resources.Load_data import load_data_to_sqlite
 
 # Fungsi DAG utama
