@@ -7,7 +7,7 @@
 ## Deskripsi Proyek
 Proyek ini merupakan implementasi proses ETL (Extract, Transform, Load) menggunakan **Apache Airflow**. Proses ini bertujuan untuk mengambil data dari beberapa sumber (CSV, JSON, XML), melakukan transformasi, dan kemudian menyimpan data ke dalam format **Parquet** dan **SQLite**. Proyek ini menggabungkan tugas-tugas ETL dalam sebuah **DAG (Directed Acyclic Graph)** yang dapat dijalankan dan diatur melalui Airflow.
 
-## Deskripsi data sources
+## Deskripsi Data Sources
 randomuser.me adalah sebuah API yang menyediakan data pengguna acak untuk keperluan pengembangan, pengujian, dan demonstrasi. Dengan menggunakan API ini, Anda dapat dengan mudah menghasilkan informasi pengguna yang realistis, termasuk nama, alamat, nomor telepon, foto profil, dan data lainnya.
 
 Fitur Utama:
@@ -40,21 +40,32 @@ URL_xml   : `https://randomuser.me/api/?format=xml&results=/`
 - **Parameterisasi**: Pengguna dapat menentukan tabel tujuan, format file, dan jumlah baris yang ingin diproses melalui parameter DAG.
 
 ## Struktur Proyek
-.
+
 ├── dags/
+
 │   └── assignment_etl_airflow.py    # Script utama DAG 
+
 └── resources/
-    ├── Extract_csv.py               # Fungsi extract untuk file CSV 
-    ├── Extract_json.py              # Fungsi extract untuk file JSON 
-    ├── Extract_xml.py               # Fungsi extract untuk file XML 
-    ├── Transform_csv.py             # Transformasi data CSV 
-    ├── Transform_json.py            # Transformasi data JSON 
-    ├── Transform_xml.py             # Transformasi data XML 
-    ├── save_to_parquet.py           # Menyimpan data ke format Parquet 
-    └── Load_data.py                 # Memuat data ke SQLite 
+
+│    └── Extract_csv.py               # Fungsi extract untuk file CSV 
+    
+│    └── Extract_json.py              # Fungsi extract untuk file JSON 
+    
+│    └── Extract_xml.py               # Fungsi extract untuk file XML 
+    
+│    └── Transform_csv.py             # Transformasi data CSV 
+    
+│    └── Transform_json.py            # Transformasi data JSON 
+    
+│    └── Transform_xml.py             # Transformasi data XML 
+    
+│    └── save_to_parquet.py           # Menyimpan data ke format Parquet 
+    
+│    └── Load_data.py                 # Memuat data ke SQLite 
+    
 └── README.md                        # Dokumentasi proyek ini
 
-  ## Struktur Data
+## Struktur Data
 
 - `id_user`          # Menyimpan ID pengguna
 - `nama_user`        # Menyimpan nama pengguna
@@ -101,7 +112,7 @@ URL_xml   : `https://randomuser.me/api/?format=xml&results=/`
 
 - Folder Data
 
-    - Save Data
+    - Save Data (proses save data dari extract menggunakan url atau scraping web sesuai format data yang diambil lalu di transform untuk di save ke format asli ya dan format parquet)
       <div style="text-align: center;">
           <img src="./images/Folder_data_&_plugins.png" alt="Architecture Overview" width="500"/>
       </div>
