@@ -1,1 +1,0 @@
-from .Data_Dummy import insert_data_dummy_to_MySQL
