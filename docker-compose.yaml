@@ -25,6 +25,8 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/airflow.cfg:/opt/airflow/airflow.cfg
   user: "${AIRFLOW_UID:-50000}:0"
+  env_file:
+    - .env
   depends_on:
     &airflow-common-depends-on
     airflow-postgres:
@@ -55,7 +57,8 @@ services:
   airflow-webserver:
     <<: *airflow-common
     container_name: airflow-webserver
-    command: webserver
+    command: >
+        bash -c "pip install --no-cache-dir faker && airflow webserver"
     ports:
       - "8080:8080"
     healthcheck:
@@ -74,7 +77,8 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     container_name: airflow-scheduler
-    command: scheduler
+    command: >
+      bash -c "pip install --no-cache-dir faker && airflow scheduler"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
       interval: 30s
@@ -91,7 +95,8 @@ services:
   airflow-triggerer:
     <<: *airflow-common
     container_name: airflow-triggerer
-    command: triggerer
+    command: >
+      bash -c "pip install --no-cache-dir faker && airflow triggerer"
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
       interval: 30s

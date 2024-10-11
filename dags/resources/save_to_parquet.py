@@ -17,23 +17,23 @@ def save_parquet_for_format(data_df, file_name):
     print(f"Data parquet tersimpan ke {file_path}")
 
 
-def transfrom_to_parquet(url, file_name, n):
+def transfrom_to_parquet(extension, file_name, n):
     folder_path = './data/parquet'
     
     # Buat folder jika belum ada
     os.makedirs(folder_path, exist_ok=True)
 
     # Proses sesuai format (JSON, CSV, atau XML)
-    if url == "json":
+    if extension == "json" or extension == "JSON" or extension == "Json":
         data = get_json(n)  # Ambil data JSON
         df_json = pd.DataFrame(data)  # Ubah data ke DataFrame
         save_parquet_for_format(df_json, file_name)  # Simpan DataFrame ke format parquet
         print(f"Dataframe untuk di save ke parquet:\n{df_json}")
-    elif url == "csv":
+    elif extension == "csv" or extension == "CSV" or extension == "Csv":
         df_csv = get_csv(n)  # Ambil data CSV dan ubah langsung ke DataFrame
         save_parquet_for_format(df_csv, file_name)  # Simpan DataFrame ke format parquet
         print(f"Dataframe untuk di save ke parquet:\n{df_csv}")
-    elif url == "xml":
+    elif extension == "xml" or extension == "XML" or extension == "Xml":
         data_xml = get_xml(n)
         # Konversi data XML ke list of dict dan kemudian ke DataFrame
         user_data_list = []

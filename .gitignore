@@ -1,0 +1,6 @@
+data/*
+images/*
+plugins/*
+dags/resources
+Case_Study_ETL_Airflow_Ajied.py
+dags/__pycache__
