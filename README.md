@@ -146,6 +146,6 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
           <img src="./picture/postgres_2.png" alt="Architecture Overview" width="500"/>
       </div>
 
-* Untuk proses extract dari MySQL dan load ke PostgreSQL hanya bisa dilakukan dengan dengan data yang berbeda karena ada id unik yang tidak bisa duplikat kalau pada proses load ke PostgreSQL di lakukan lebih dari satu kali di data yang sama maka akan error karena ada beberapa kolom id yang unik...
+* `Untuk proses extract dari MySQL dan load ke PostgreSQL hanya bisa dilakukan satu kali dan kalau mau dilakukan lebih dari satu kali harus tambahkan parameter Incremental data atau data tambahan atau diperbarui secara periodik dalam suatu sistem karena ada id unik yang tidak bisa duplikat pada proses load ke PostgreSQL bila dilakukan lebih dari satu kali di data yang sama maka akan error. Pada database atau schema ada beberapa kolom id yang unik...`
 
 Thank You 🤙
