@@ -141,10 +141,11 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
           <img src="./picture/postgres_1.png" alt="Architecture Overview" width="500"/>
       </div>
     
-      - Show data di MySQL pada database `project_dibimbing`
+    - Show data di MySQL pada database `project_dibimbing`
       <div style="text-align: center;">
           <img src="./picture/postgres_2.png" alt="Architecture Overview" width="500"/>
       </div>
 
 * Untuk proses extract dari MySQL dan load ke PostgreSQL hanya bisa dilakukan dengan dengan data yang berbeda karena ada id unik yang tidak bisa duplikat kalau pada proses load ke PostgreSQL di lakukan lebih dari satu kali di data yang sama maka akan error karena ada beberapa kolom id yang unik...
+
 Thank You 🤙
