@@ -1,6 +1,29 @@
+# Ignore data files
 data/*
 images/*
 plugins/*
 dags/resources
+
+# Ignore compiled Python files and cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore logs, PIDs, and other runtime files
+logs/
+tmp/
+*.pid
+
+# Ignore specific DAG Python file
 Case_Study_ETL_Airflow_Ajied.py
-dags/__pycache__
+
+# Ignore database files
+airflow.db
+airflow.db-journal
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore virtual environment
+venv/
