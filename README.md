@@ -89,7 +89,7 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
 
 - DAGs
 
-      - UI 2 file DAG
+    - UI 2 file DAG
       <div style="text-align: center;">
           <img src="./picture/DAGs.png" alt="Architecture Overview" width="500"/>
       </div>
