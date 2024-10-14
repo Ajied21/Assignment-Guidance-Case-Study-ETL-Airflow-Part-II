@@ -25,6 +25,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal perangkat lunak b
 - **Schema_Table**: Membuat tabel lalu dihubungkan atau dibuat relasi ya dengan metode star schema dimana ada satu tabel fact.
 - **Database_MySQL**: untuk staging area ya itu bernama `project_dibimbing`.
 - **Schema_PostgreSQL**: untuk schema ya itu bernama `project_dibimbing`.
+- ""schedule_interval**: untuk menjadwalkan proses DAGs pada file yang bernama `Extract_MySQL_and_Load_PostgreSQL.py`.
 - **Extract**: Mengambil data dari staging area di **MySQL**.
 - **Load**: Menyimpan data hasil extract dan memuatnya ke dalam **PostgreSQL**.
 - **Branching**: Pemilihan alur berdasarkan koneksi database dalam bentuK success atau failed.
@@ -35,7 +36,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal perangkat lunak b
 
 │   └── Create_Table_and_Insert_Data_MySQL.py    # Script utama 1 DAG (Bronze)
 
-│   └── Extract_MySQL_and_Load_PostgreSQL.py    # Script utama 2 DAG (Silver -> Gold)
+│   └── Extract_MySQL_and_Load_PostgreSQL.py    # Script utama 2 DAG (Silver (schedule_interval) -> Gold)
 
 └── Client_DB/
 
@@ -146,6 +147,6 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
           <img src="./picture/postgres_2.png" alt="Architecture Overview" width="500"/>
       </div>
 
-* `Untuk proses load ke PostgreSQL itu bersifat increamental data jika data yang di extract dari MySQL sudah ada di database PostgreSQL maka tidak akan di load. Jadi, tergantung dari database MySQL ya apakah ada data baru atau ada update baru...`
+* `Untuk proses load ke PostgreSQL itu bersifat increamental data jika data yang di extract dari MySQL sudah ada di database PostgreSQL maka tidak akan di load. Jadi, tergantung dari database MySQL ya apakah ada data baru atau ada update baru dan proses schedule_interval dilakukan setelah proses extract selesai pada file Create_Table_and_Insert_Data_MySQL.py lalu di load pada file Extract_MySQL_and_Load_PostgreSQL.py dengan crontab yang sudah diatur...`
 
 Thank You 🤙
