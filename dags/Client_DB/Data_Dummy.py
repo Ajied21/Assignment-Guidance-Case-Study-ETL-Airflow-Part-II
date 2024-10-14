@@ -176,14 +176,14 @@ def insert_data_dummy_to_MySQL():
     cur.execute("USE project_dibimbing")
 
     # Menjalankan fungsi-fungsi di atas untuk memasukkan data dummy
-    insert_customer_information(cur, 1000)
+    insert_customer_information(cur, 100)
     insert_employees(cur, 50)
     insert_room_class(cur, 5)
-    insert_room_information(cur, 1000)
-    insert_reservation(cur, 1000)
-    insert_payments(cur, 1000)
-    insert_transactions(cur, 1000)
-    insert_reports(cur, 1000)
+    insert_room_information(cur, 100)
+    insert_reservation(cur, 100)
+    insert_payments(cur, 100)
+    insert_transactions(cur, 100)
+    insert_reports(cur, 100)
 
     # Commit perubahan dan tutup koneksi
     conn.commit()
