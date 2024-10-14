@@ -25,7 +25,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal perangkat lunak b
 - **Schema_Table**: Membuat tabel lalu dihubungkan atau dibuat relasi ya dengan metode star schema dimana ada satu tabel fact.
 - **Database_MySQL**: untuk staging area ya itu bernama `project_dibimbing`.
 - **Schema_PostgreSQL**: untuk schema ya itu bernama `project_dibimbing`.
-- ""schedule_interval**: untuk menjadwalkan proses DAGs pada file yang bernama `Extract_MySQL_and_Load_PostgreSQL.py`.
+- **schedule_interval**: untuk menjadwalkan proses DAGs pada file yang bernama `Extract_MySQL_and_Load_PostgreSQL.py`.
 - **Extract**: Mengambil data dari staging area di **MySQL**.
 - **Load**: Menyimpan data hasil extract dan memuatnya ke dalam **PostgreSQL**.
 - **Branching**: Pemilihan alur berdasarkan koneksi database dalam bentuK success atau failed.
