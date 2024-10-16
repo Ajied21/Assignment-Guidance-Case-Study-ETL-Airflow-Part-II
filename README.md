@@ -86,6 +86,10 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
 - Password: dibimbing
 - Port: 5434 (menyesuaikan)
 
+## Penjelasan singkat proyek
+
+`Untuk proses load ke PostgreSQL itu bersifat increamental data jika data yang di extract dari MySQL sudah ada di database PostgreSQL maka tidak akan di load. Jadi, tergantung dari database MySQL ya apakah ada data baru atau ada update baru dan proses schedule_interval dilakukan setelah proses extract selesai pada file Create_Table_and_Insert_Data_MySQL.py lalu di load pada file Extract_MySQL_and_Load_PostgreSQL.py dengan crontab yang sudah diatur...`
+
 ## Screenshot proyek
 
 - DAGs
@@ -146,7 +150,5 @@ Skrip Python yang disiapkan dalam proyek ini menggunakan Faker untuk menghasilka
       <div style="text-align: center;">
           <img src="./picture/postgres_2.png" alt="Architecture Overview" width="500"/>
       </div>
-
-* `Untuk proses load ke PostgreSQL itu bersifat increamental data jika data yang di extract dari MySQL sudah ada di database PostgreSQL maka tidak akan di load. Jadi, tergantung dari database MySQL ya apakah ada data baru atau ada update baru dan proses schedule_interval dilakukan setelah proses extract selesai pada file Create_Table_and_Insert_Data_MySQL.py lalu di load pada file Extract_MySQL_and_Load_PostgreSQL.py dengan crontab yang sudah diatur...`
 
 Thank You 🤙
